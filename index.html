@@ -183,6 +183,12 @@
 
   /* ---------- projects ---------- */
   .proj{display:grid;gap:1.15rem}
+  .aviso{
+    margin:0 0 1.15rem;padding:.85rem 1.1rem;border-radius:6px;
+    border:1px solid var(--line-soft);border-left:2px solid var(--cyan);
+    background:#0A152C;color:#A9BDE2;font-size:.88rem;line-height:1.6;
+  }
+  .aviso b{color:var(--ink);font-weight:500}
   .proj .card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.78fr);gap:clamp(1.1rem,3vw,2.4rem);transition:border-color .2s ease,transform .2s ease}
   .proj .card:hover{border-color:var(--line);transform:translateY(-2px)}
   @media (max-width:860px){.proj .card{grid-template-columns:1fr}}
@@ -524,6 +530,8 @@
       <h2 data-pt="Coisas que eu construí e você pode abrir" data-en="Things I built that you can open">Coisas que eu construí e você pode abrir</h2>
       <div class="rule"></div>
     </div>
+
+    <p class="aviso" data-pt="<b>Se o app estiver dormindo, é só acordar.</b> Todos estes projetos rodam no Streamlit Cloud, que hiberna aplicativos sem acesso recente. Se você cair numa tela dizendo que o app está em hibernação, clique no botão que aparece ali — ele volta no ar em menos de um minuto." data-en="<b>If the app is asleep, just wake it up.</b> These projects all run on Streamlit Cloud, which hibernates apps without recent traffic. If you land on a screen saying the app is sleeping, click the button on it — it comes back in under a minute."><b>Se o app estiver dormindo, é só acordar.</b> Todos estes projetos rodam no Streamlit Cloud, que hiberna aplicativos sem acesso recente. Se você cair numa tela dizendo que o app está em hibernação, clique no botão que aparece ali — ele volta no ar em menos de um minuto.</p>
 
     <div class="proj">
 
