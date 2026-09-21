@@ -290,6 +290,10 @@
   .foot .gh{display:inline-flex;align-items:center;gap:.35rem}
   .foot .gh svg{width:12px;height:12px;fill:currentColor}
 
+  .cta-end{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:1.2rem 2rem;align-items:center;justify-content:space-between;padding:clamp(1.2rem,3vw,1.8rem);border:1px solid var(--line);border-left:2px solid var(--cyan);border-radius:10px;background:linear-gradient(90deg,rgba(18,48,90,.55),rgba(10,21,44,.6))}
+  .cta-end h3{font-size:1.25rem;margin-top:.35rem}
+  .cta-end p{margin:.4rem 0 0;color:#A9BDE2;font-size:.92rem;max-width:56ch}
+  .cta-btns{display:flex;flex-wrap:wrap;gap:.5rem}
   /* ---------- footer ---------- */
   footer{border-top:1px solid var(--line-soft);background:#050A17;position:relative;z-index:1}
   .foot{display:flex;flex-wrap:wrap;gap:1.75rem 3rem;justify-content:space-between;align-items:flex-end;padding:2.75rem 0 3.25rem}
@@ -880,7 +884,19 @@
         </div>
       </article>
     </div>
-</section>
+  <div class="cta-end">
+      <div>
+        <span class="label" data-pt="próximo passo" data-en="next step">próximo passo</span>
+        <h3 data-pt="Quer conversar sobre algum desses projetos?" data-en="Want to talk about any of these projects?">Quer conversar sobre algum desses projetos?</h3>
+        <p data-pt="Conto o que ficou de fora do case — as decisões, os erros e o que eu faria diferente." data-en="I can walk you through what didn't make it into the case — the decisions, the mistakes and what I'd do differently.">Conto o que ficou de fora do case — as decisões, os erros e o que eu faria diferente.</p>
+      </div>
+      <div class="cta-btns">
+        <a class="btn" href="mailto:gabi.gatti.rodrigues@gmail.com" data-pt="Mandar e-mail →" data-en="Send an e-mail →">Mandar e-mail →</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/gabriela-gatti-rodrigues" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn ↗</a>
+        <a class="btn ghost" href="Curriculo_Gabriela_Gatti_Rodrigues.pdf" download data-pt="Baixar CV (PDF)" data-en="Download résumé (PDF)">Baixar CV (PDF)</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
