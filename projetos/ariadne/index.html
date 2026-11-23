@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Página-ponte: não aparece no portfólio nem no Google, é pra mandar o projeto direto pra alguém -->
+<meta name="robots" content="noindex, nofollow">
+<title>Ariadne — Gabriela Gatti Rodrigues</title>
+<meta name="description" content="A recompra caiu 8 p.p. em um ano. Foi uma safra ruim, algo que pegou todo mundo ou só o mix?">
+<meta name="theme-color" content="#060C1C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ariadne · Análise de safras (cohort) — Gabriela Gatti Rodrigues">
+<meta property="og:description" content="A recompra caiu 8 p.p. em um ano. Foi uma safra ruim, algo que pegou todo mundo ou só o mix?">
+<meta property="og:url" content="https://gabigattirodrigues.github.io/projetos/ariadne/">
+<meta property="og:image" content="https://gabigattirodrigues.github.io/previews/og/ariadne.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%93%88%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Mesma paleta e tipografia do portfólio */
+  :root{
+    --void:#060C1C;--panel:#0D1730;--panel-2:#132140;--line:#1E3160;--line-soft:#16264A;
+    --ink:#EAF1FF;--muted:#93A8D0;--blue:#3E8CFF;--cyan:#61E1FF;--pop:#FF5CA8;
+    --font-d:"Chakra Petch",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --font-b:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --font-m:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--void);color:var(--ink);font-family:var(--font-b);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:-20vw auto auto -20vw;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,#1D5CCB44,transparent 68%);filter:blur(80px);pointer-events:none;z-index:0}
+  a{color:var(--cyan)}
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:3px}
+  .wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.25rem)}
+
+  header{position:sticky;top:0;z-index:5;background:rgba(6,12,28,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:58px}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--font-d);font-weight:700;font-size:.95rem;color:var(--ink);text-decoration:none}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+  .brand small{font-family:var(--font-m);font-weight:400;font-size:.7rem;color:var(--muted)}
+  @media (max-width:560px){.brand small{display:none}}
+  .lang{display:flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .lang button{font-family:var(--font-m);font-size:.72rem;background:transparent;border:0;color:var(--muted);padding:.4rem .6rem;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--panel-2);color:var(--ink)}
+
+  .label{font-family:var(--font-m);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .label::before{content:"// ";color:var(--blue)}
+
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(1.4rem,4vw,3rem);align-items:start;padding:clamp(2rem,6vw,3.6rem) 0 2rem}
+  @media (max-width:880px){.hero{grid-template-columns:1fr}}
+  .p-top{display:flex;gap:1rem;align-items:center;margin:.9rem 0 1rem}
+  .p-icon{flex:none;width:60px;height:60px;border-radius:10px;overflow:hidden;background:#EDF3FC;border:1px solid var(--line);display:grid;place-items:center}
+  .p-icon.mark{background:radial-gradient(circle at 50% 30%,#1D4C93,#0B1B38);color:var(--cyan);font-size:1.5rem}
+  .p-icon img{width:100%;height:100%;object-fit:contain;display:block}
+  .p-name{font-family:var(--font-m);font-size:.78rem;color:var(--muted)}
+  .p-head{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+  h1{font-family:var(--font-d);font-weight:700;font-size:clamp(2rem,5vw,2.8rem);line-height:1.05;margin:0}
+  .status{font-family:var(--font-m);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .5rem;border-radius:3px;border:1px solid currentColor}
+  .status.live{color:#5BE6A8}.status.wip{color:var(--pop)}
+  .areas{margin:0 0 1.1rem;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.35rem}
+  .areas li{font-family:var(--font-m);font-size:.66rem;padding:.18rem .5rem;border-radius:4px;background:#12305A;color:var(--cyan)}
+  .gancho{font-family:var(--font-d);font-weight:600;font-size:clamp(1.25rem,2.6vw,1.5rem);line-height:1.3;margin:0 0 .9rem;color:var(--ink)}
+  .problema{margin:0 0 1.1rem;color:#C7D6F2;font-size:.98rem}
+  .kpi{display:flex;gap:.75rem;align-items:center;padding:.7rem .85rem;border:1px dashed var(--line);border-radius:6px;background:rgba(6,12,28,.5);margin-bottom:1.1rem}
+  .kpi b{font-family:var(--font-d);font-size:1.45rem;font-weight:600;color:var(--cyan);white-space:nowrap}
+  .kpi span{font-size:.82rem;color:var(--muted);line-height:1.4}
+  .stack-chips{margin:0 0 1.4rem;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.35rem}
+  .stack-chips li{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-m);font-size:.72rem;color:#C2D3F0;border:1px solid var(--line);border-radius:3px;padding:.24rem .5rem .24rem .42rem;background:#0A152C}
+  .stack-chips svg{width:14px;height:14px;flex:none;fill:currentColor;opacity:.92}
+
+  .ctas{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-m);font-size:.84rem;text-decoration:none;padding:.72rem 1.1rem;border-radius:5px;border:1px solid var(--blue);color:var(--void);background:var(--cyan);transition:transform .12s ease,box-shadow .12s ease}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px -12px var(--cyan)}
+  .btn.big{font-size:.95rem;padding:.85rem 1.35rem;font-weight:500}
+  .btn.ghost{background:transparent;color:var(--cyan);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--cyan);box-shadow:none}
+  .btn svg{width:14px;height:14px;fill:currentColor}
+  .nota{font-size:.8rem;color:var(--muted);margin:.7rem 0 0}
+  .nota a{color:var(--muted)}
+
+  .pv{position:relative;display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#0A1430;box-shadow:0 30px 60px -35px #000}
+  .pv img{width:100%;height:auto;display:block;aspect-ratio:1000/643;object-fit:cover;object-position:top left}
+  .pv-tag{position:absolute;left:.6rem;top:.6rem;font-family:var(--font-m);font-size:.62rem;color:var(--muted);background:rgba(6,12,28,.85);border:1px solid var(--line);padding:.12rem .45rem;border-radius:4px}
+
+  .card{background:linear-gradient(180deg,var(--panel),#0A1329);border:1px solid var(--line-soft);border-radius:8px;padding:clamp(1.15rem,3vw,1.8rem)}
+  .sono{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.1rem,3vw,2.4rem);align-items:center;border-left:2px solid var(--pop);scroll-margin-top:80px}
+  @media (max-width:880px){.sono{grid-template-columns:1fr}}
+  h2{font-family:var(--font-d);font-weight:600;font-size:1.3rem;margin:.35rem 0 .6rem}
+  .sono p{margin:0 0 .8rem;color:#C7D6F2;font-size:.95rem}
+  .sono ol{margin:0;padding-left:1.2rem;color:#C7D6F2;font-size:.95rem}
+  .sono ol li{margin:.25rem 0}
+  .sono b{color:var(--ink);font-weight:600}
+  .print{margin:0;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:#fff}
+  .print img{width:100%;height:auto;display:block}
+  .print figcaption{font-family:var(--font-m);font-size:.66rem;color:#5A6B8C;background:#F2F5FB;padding:.4rem .7rem;border-top:1px solid #E1E7F2}
+
+  .mais{margin:2rem 0 3rem;display:flex;flex-wrap:wrap;gap:1.2rem 2rem;align-items:center;justify-content:space-between}
+  .mais p{margin:.35rem 0 0;color:#C7D6F2;max-width:560px}
+  footer{border-top:1px solid var(--line-soft);padding:1.3rem 0 2rem;font-family:var(--font-m);font-size:.72rem;color:var(--muted)}
+  footer a{color:var(--muted);margin-right:1rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <a class="brand" href="../../"><span class="dot"></span><span>Gabriela Gatti Rodrigues</span><small data-pt="· portfólio de dados" data-en="· data portfolio">· portfólio de dados</small></a>
+    <div class="lang" role="group" aria-label="Idioma"><button type="button" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="label" data-pt="projeto do portfólio" data-en="portfolio project">projeto do portfólio</span>
+      <div class="p-top">
+        <div class="p-icon"><img alt="Ariadne" height="66" src="data:image/jpeg;base64,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" width="66"/></div>
+        <div>
+          <div class="p-name" data-en="Cohort analysis" data-pt="Análise de safras (cohort)">Análise de safras (cohort)</div>
+          <div class="p-head"><h1>Ariadne</h1><span class="status live" data-en="live" data-pt="no ar">no ar</span></div>
+        </div>
+      </div>
+      <ul class="areas"><li data-en="CRM &amp; Retention" data-pt="CRM &amp; Retenção">CRM &amp; Retenção</li><li data-en="Marketing &amp; Media" data-pt="Marketing &amp; Mídia">Marketing &amp; Mídia</li><li data-en="Product &amp; Growth" data-pt="Produto &amp; Growth">Produto &amp; Growth</li></ul>
+      <p class="gancho" data-pt="A recompra caiu 8 p.p. em um ano. Foi uma safra ruim, algo que pegou todo mundo ou só o mix?" data-en="Repeat purchase fell 8 p.p. in a year. A bad cohort, something that hit everyone, or just the mix?">A recompra caiu 8 p.p. em um ano. Foi uma safra ruim, algo que pegou todo mundo ou só o mix?</p>
+      <p class="problema" data-pt="O problema: a taxa de recompra de um app de delivery fictício caiu de 38,1% para 29,7% em um ano, e cada área tinha o seu culpado. Produto culpava a safra da Black Friday; marketing culpava a nova taxa de entrega. Ninguém falava da mudança de mix de canal." data-en="The problem: repeat purchase at a fictional delivery app fell from 38.1% to 29.7% in a year, and every team had its suspect. Product blamed the Black Friday cohort; marketing blamed the new delivery fee. Nobody mentioned the channel mix shift.">O problema: a taxa de recompra de um app de delivery fictício caiu de 38,1% para 29,7% em um ano, e cada área tinha o seu culpado. Produto culpava a safra da Black Friday; marketing culpava a nova taxa de entrega. Ninguém falava da mudança de mix de canal.</p>
+      <div class="kpi"><b data-en="45%" data-pt="45%">45%</b><span data-en="of the drop came from a period effect (the new delivery fee), not from a bad cohort" data-pt="da queda veio de um efeito de período (a nova taxa de entrega), não de safra ruim">da queda veio de um efeito de período (a nova taxa de entrega), não de safra ruim</span></div>
+      <ul class="stack-chips"><li><svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"></path></svg><span>Python</span></li><li><svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M16.673 11.32l6.862-3.618c.233-.136.554.12.442.387L20.463 17.1zm-8.556-.229l3.473-5.187c.203-.328.578-.316.793-.028l7.886 11.75zm-3.375 7.25c-.28 0-.835-.284-.993-.716l-3.72-9.46c-.118-.331.139-.614.48-.464l19.474 10.306c-.149.147-.453.337-.72.334z"></path></svg><span>Streamlit</span></li><li><svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M3 20.2V4.6h1.7v13.9H21V20.2H3zm3.4-2.6V13h2.3v4.6H6.4zm4-0.0V9.6h2.3v8H10.4zm4 0V6.2h2.3v11.4h-2.3z"></path></svg><span data-en="Cohort triangle + shift-share" data-pt="Triângulo de safras + shift-share">Triângulo de safras + shift-share</span></li></ul>
+      <div class="ctas">
+        <a class="btn big" href="https://ariadne-cohort.streamlit.app/" target="_blank" rel="noopener" data-pt="Abrir o app ↗" data-en="Open the app ↗">Abrir o app ↗</a>
+        <a class="btn ghost" href="../../#ariadne" data-pt="Ver o case completo" data-en="Read the full case">Ver o case completo</a>
+      </div>
+      <p class="nota" data-pt="O app pode estar dormindo. <a href=&quot;#dormindo&quot;>Veja como acordar ↓</a>" data-en="The app may be asleep. <a href=&quot;#dormindo&quot;>See how to wake it ↓</a>">O app pode estar dormindo. <a href="#dormindo">Veja como acordar ↓</a></p>
+    </div>
+    <a class="pv" href="https://ariadne-cohort.streamlit.app/" target="_blank" rel="noopener" aria-label="Abrir o app">
+      <img src="../../previews/ariadne.gif" alt="" width="1000" height="643">
+      <span class="pv-tag" data-pt="prévia do app" data-en="app preview">prévia do app</span>
+    </a>
+  </section>
+
+  <section class="card sono" id="dormindo">
+    <div>
+      <span class="label" data-pt="antes de abrir" data-en="before you open it">antes de abrir</span>
+      <h2 data-pt="Se o app estiver dormindo, é só acordar" data-en="If the app is asleep, just wake it up">Se o app estiver dormindo, é só acordar</h2>
+      <p data-pt="O app roda no Streamlit Cloud, que é gratuito e coloca o app pra dormir quando ele fica algumas horas sem visita. Não é erro, e acordar é rápido:" data-en="The app runs on Streamlit Cloud, which is free and puts the app to sleep after a few hours without visits. It's not an error, and waking it up is quick:">O app roda no Streamlit Cloud, que é gratuito e coloca o app pra dormir quando ele fica algumas horas sem visita. Não é erro, e acordar é rápido:</p>
+      <ol>
+        <li data-pt="Se aparecer a tela ao lado, clique no botão azul <b>Yes, get this app back up!</b>" data-en="If you see the screen on the side, click the blue <b>Yes, get this app back up!</b> button">Se aparecer a tela ao lado, clique no botão azul <b>Yes, get this app back up!</b></li>
+        <li data-pt="Espere um pouco: ele volta em menos de um minuto." data-en="Give it a moment: it's back in under a minute.">Espere um pouco: ele volta em menos de um minuto.</li>
+        <li data-pt="Pronto, o app abre normalmente." data-en="Done, the app opens normally.">Pronto, o app abre normalmente.</li>
+      </ol>
+    </div>
+    <figure class="print">
+      <img src="../../previews/streamlit-dormindo.png" alt="Tela do Streamlit com o app dormindo e o botão Yes, get this app back up!" width="600" height="305" loading="lazy">
+      <figcaption data-pt="assim é a tela do app dormindo" data-en="this is what the sleeping app looks like">assim é a tela do app dormindo</figcaption>
+    </figure>
+  </section>
+
+  <section class="mais">
+    <div>
+      <span class="label" data-pt="tem mais" data-en="there's more">tem mais</span>
+      <p data-pt="Este é um dos 18 projetos do meu portfólio, que vai de CRM e retenção a MMM, experimentação, logística e governança de dados. Lá também estão meu currículo e a história de cada case." data-en="This is one of 18 projects in my portfolio, from CRM and retention to MMM, experimentation, logistics and data governance. You'll also find my résumé and the story behind each case.">Este é um dos 18 projetos do meu portfólio, que vai de CRM e retenção a MMM, experimentação, logística e governança de dados. Lá também estão meu currículo e a história de cada case.</p>
+    </div>
+    <div class="ctas">
+      <a class="btn" href="../../#proj" data-pt="Ver todos os projetos →" data-en="See all projects →">Ver todos os projetos →</a>
+      <a class="btn ghost" href="../../#cv" data-pt="Meu currículo" data-en="My résumé">Meu currículo</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="../../">gabigattirodrigues.github.io</a><a href="https://www.linkedin.com/in/gabriela-gatti-rodrigues" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/GabiGattiRodrigues/ariadne" target="_blank" rel="noopener" data-pt="código no GitHub" data-en="code on GitHub">código no GitHub</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Idioma: mesmo esquema do portfólio (guarda em gg-lang); ?lang=en força inglês no link
+  var nodes = document.querySelectorAll('[data-pt][data-en]');
+  var btns = document.querySelectorAll('.lang button');
+  var titles = {pt:"Ariadne · Análise de safras (cohort) — Gabriela Gatti Rodrigues", en:"Ariadne · Cohort analysis — Gabriela Gatti Rodrigues"};
+  function setLang(l){
+    nodes.forEach(function(n){ n.innerHTML = n.getAttribute('data-' + l); });
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === l)); });
+    document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+    document.title = titles[l];
+    try { localStorage.setItem('gg-lang', l); } catch(e){}
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  var q = new URLSearchParams(location.search).get('lang'), saved = null;
+  try { saved = localStorage.getItem('gg-lang'); } catch(e){}
+  setLang((q || saved) === 'en' ? 'en' : 'pt');
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aa3df904de7a4d5bb7ff302ca9b12f47"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
